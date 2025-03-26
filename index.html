@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit Interface</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .text-animation {
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Audit Interface</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="#" id="pourcentageDropdown" role="button" data-bs-toggle="dropdown">Pourcentage</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="showPercentage('Taux 5S UAP1', '82%')">Taux 5S UAP1</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPercentage('Taux Gemba UAP1', '82%')">Taux Gemba UAP1</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPercentage('Taux 5S Logistique', '93%')">Taux 5S Logistique</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPercentage('Taux Gemba Logistique', '95%')">Taux Gemba Logistique</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPercentage('Taux 5S Usine', '77%')">Taux 5S Usine</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPercentage('Taux Gemba Usine', '75%')">Taux Gemba Usine</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPercentage('Taux 5S UAP2', '60%')">Taux 5S UAP2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPercentage('Taux Gemba UAP2', '75%')">Taux Gemba UAP2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#auditSection">Audit</a>
+                        <div class="collapse" id="auditSection">
+                            <ul class="list-unstyled">
+                                <li><a class="nav-link" href="https://forms.office.com/pages/responsepage.aspx?id=Yy2gqiIfe0W77Avd4jtr3wM3f1Qll_xKkMAzfzJQ_BRUM1hRVVYyQ0hBOFpGQ1lGMlgzSkpNS1BETC4u&route=shorturl" target="_blank">Audit Gemba OJT Ligne</a></li>
+                                <li><a class="nav-link" href="https://forms.office.com/pages/responsepage.aspx?id=Yy2gqiIfe0W77Avd4jtr3wM3f1Qll_xKkMAzfzJQ_BRUMDVBQkVHM002WUhaNUdINVpaTFpTTTVSRC4u&route=shorturl" target="_blank">Audit Gemba Mur Qualité</a></li>
+                                <li><a class="nav-link" href="https://forms.office.com/pages/responsepage.aspx?id=Yy2gqiIfe0W77Avd4jtr3wM3f1Qll_xKkMAzfzJQ_BRURjJOMUdPOVFXU1FUR0tCN09WQTdJWVdHRS4u&route=shorturl" target="_blank">Audit Gemba Magasin</a></li>
+                                <li><a class="nav-link" href="https://forms.office.com/pages/responsepage.aspx?id=Yy2gqiIfe0W77Avd4jtr3wM3f1Qll_xKkMAzfzJQ_BRUNzQ4MldBM0dTVzc0MFRHVlc0UlU2VE9QRi4u&route=shorturl" target="_blank">Audit 5S</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#videoSection">Vidéos</a>
+                        <div class="collapse" id="videoSection">
+                            <ul class="list-unstyled">
+                                <li><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/embed/ni5AtO-92YE">Vidéo 1</a></li>
+                                <li><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/embed/finG5RcRS1w">Vidéo 2</a></li>
+                                <li><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/embed/pE_ptDrpPDM">Vidéo 3</a></li>
+                                <li><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/embed/BweHTgi-L_Y">Vidéo 4</a></li>
+                                <li><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/embed/PlZpe_P7OU8">Vidéo 5</a></li>
+                                <li><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/embed/ntKqMhbqTII">Vidéo 6</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://forms.office.com/e/TpWLh24LzL" target="_blank">Proposition d'Amélioration</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#planningSection">Planning</a>
+                        <div class="collapse" id="planningSection">
+                            <ul class="list-unstyled">
+                                <li><a class="nav-link" href="https://wkwgroup-my.sharepoint.com/:x:/r/personal/houssine_trabelsi_wkw-group_com/_layouts/15/Doc.aspx?sourcedoc=%7BE62360FF-0F09-45B3-8656-782A6158348F%7D&file=Planning%205S.xlsx&action=default&mobileredirect=true" target="_blank">Planning 5S</a></li>
+                                <li><a class="nav-link" href="https://wkwgroup-my.sharepoint.com/:x:/g/personal/houssine_trabelsi_wkw-group_com/ETxX6xG42nFJqQV1-PaMiFIB2aBMLG-Ux7JdHCwLSOYtIA?e=B1xLbs" target="_blank">Planning Gemba</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="accueil" class="container mt-4 text-center text-animation">
+        <h1>Welcome to WKW.group</h1>
+        <h3>Aluminum, steel and plastic</h3>
+        <p>Materials with unimagined capabilities for the automotive industry and design-oriented industrial applications.</p>
+        <div class="center-image">
+            <img src="https://media.licdn.com/dms/image/v2/C510BAQFv4NwvhYRq8Q/company-logo_200_200/company-logo_200_200/0/1631351838133?e=2147483647&v=beta&t=pE5-TQRX2fd9oIfzQypoBLterLoj-X4wOnC3C8MMI4Q" alt="WKW Group Logo">
+        </div>
+    </section>
+
+    <section id="percentageResult" class="container mt-4" style="display: none;">
+        <div class="alert alert-info percentage-alert" id="percentageDisplay">
+            <h4 id="percentageTitle"></h4>
+            <p id="percentageValue"></p>
+        </div>
+    </section>
+
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel">Vidéo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe id="videoPlayer" width="100%" height="400" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
