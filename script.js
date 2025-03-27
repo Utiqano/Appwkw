@@ -1,26 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     // Fonction pour afficher le pourcentage avec un effet de transition
-    function showPercentage(name, percentage) {
-        const percentageTitle = document.getElementById('percentageTitle');
-        const percentageValue = document.getElementById('percentageValue');
-        const percentageResult = document.getElementById('percentageResult');
+  function showPercentage(name, percentage) {
+    const percentageTitle = document.getElementById('percentageTitle');
+    const percentageValue = document.getElementById('percentageValue');
+    const percentageResult = document.getElementById('percentageResult');
 
-        if (percentageTitle && percentageValue && percentageResult) {
-            percentageTitle.innerHTML = name;
-            percentageValue.innerHTML = `Taux: ${percentage}`;
+    if (percentageTitle && percentageValue && percentageResult) {
+        percentageTitle.innerHTML = name;
+        percentageValue.innerHTML = `Taux: ${percentage}`;
 
-            // Effet d'animation
-            percentageResult.style.opacity = "0";
-            percentageResult.style.transform = "translateY(-10px)";
-            percentageResult.style.display = "block";
+        // Effet d'animation
+        percentageResult.style.opacity = "0";
+        percentageResult.style.transform = "translateY(-10px)";
+        percentageResult.style.display = "block";
 
-            setTimeout(() => {
-                percentageResult.style.opacity = "1";
-                percentageResult.style.transform = "translateY(0)";
-            }, 200);
-        }
+        setTimeout(() => {
+            percentageResult.style.opacity = "1";
+            percentageResult.style.transform = "translateY(0)";
+        }, 200);
     }
+}
+
+// Attacher à `window` pour qu'il soit accessible globalement
+window.showPercentage = showPercentage;
+
 
     // Gestion du modal vidéo avec correction des liens YouTube
     var videoModal = document.getElementById('videoModal');
