@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     // Fonction pour afficher le pourcentage avec un effet de transition
-  function showPercentage(name, percentage) {
+   function showPercentage(name, percentage) {
     const percentageTitle = document.getElementById('percentageTitle');
     const percentageValue = document.getElementById('percentageValue');
     const percentageResult = document.getElementById('percentageResult');
@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Attacher à `window` pour qu'il soit accessible globalement
 window.showPercentage = showPercentage;
-
 
     // Gestion du modal vidéo avec correction des liens YouTube
     var videoModal = document.getElementById('videoModal');
