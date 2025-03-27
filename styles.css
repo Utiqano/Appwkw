@@ -31,10 +31,12 @@
     .contact-form {
         background: #2D3748 !important; /* Dark form background */
         padding: 20px;
+        border-radius: 8px; /* Rounded corners */
     }
 
     .contact-form label {
         color: #F9FAFB !important; /* Light label color */
+        font-size: 1rem;
     }
 
     .contact-form .form-control {
@@ -45,6 +47,7 @@
 
     .contact-form .form-control:focus {
         border-color: #F9A8D4 !important; /* Light pink glow */
+        box-shadow: 0 0 5px #F9A8D4; /* Subtle glow effect */
     }
 
     .contact-form button {
@@ -64,55 +67,82 @@
     /* Table Styling */
     table th, table td {
         color: #F9FAFB !important; /* Light text color */
-        padding: 10px;
+        padding: 12px;
+        border-bottom: 1px solid #9B1111; /* Red border under cells */
+    }
+
+    table th {
+        background-color: #1A202C;
     }
 
     /* Footer */
     footer {
         background-color: #1C1C1C !important;
         color: #F9FAFB !important;
-        padding: 15px;
+        padding: 20px;
+        text-align: center;
     }
 
     footer a {
         color: #F9A8D4 !important; /* Light pink for footer links */
+        font-weight: bold;
     }
 
     footer a:hover {
         color: #F9A8D4 !important;
+        text-decoration: underline;
     }
 }
 
 /* Larger Screens (tablets and up) */
 @media (min-width: 769px) and (max-width: 1024px) {
     h1 {
-        font-size: 2.4rem;
-    }
-
-    h3 {
-        font-size: 1.6rem;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 1.2rem;
-    }
-
-    .contact-form {
-        padding: 25px;
-    }
-}
-
-/* For very large screens (desktops and up) */
-@media (min-width: 1025px) {
-    h1 {
-        font-size: 3rem;
+        font-size: 2.6rem;
     }
 
     h3 {
         font-size: 1.8rem;
     }
 
+    .navbar-nav .nav-link {
+        font-size: 1.4rem;
+    }
+
+    .contact-form {
+        padding: 30px;
+        border-radius: 10px; /* More rounded corners for larger screens */
+    }
+
+    table th, table td {
+        padding: 14px;
+    }
+}
+
+/* For very large screens (desktops and up) */
+@media (min-width: 1025px) {
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.6rem;
+    }
+
     .contact-form {
         padding: 40px;
+        width: 50%; /* Centering the form on larger screens */
+        margin: 0 auto;
+    }
+
+    table th, table td {
+        padding: 16px;
+    }
+
+    footer {
+        padding: 25px;
     }
 }
