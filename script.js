@@ -71,3 +71,38 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Initialize Email.js with your public key
+    emailjs.init("3yJlZosC-pbJKwn0Q"); // Replace with your Email.js Public Key
+
+    document.getElementById('sendButton').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent page refresh
+
+        // Get form values
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var comment = document.getElementById('comment').value;
+
+        if (name && email && comment) {
+            // Email.js template parameters
+            var templateParams = {
+                user_name: name,
+                user_email: email,
+                user_message: comment
+            };
+
+            // Send email using Email.js
+            emailjs.send("service_bvzi4ft", "template_py9w0zf", templateParams)
+                .then(function (response) {
+                    alert("Email envoyé avec succès !");
+                    console.log("SUCCESS!", response.status, response.text);
+                }, function (error) {
+                    alert("Erreur lors de l'envoi du mail.");
+                    console.log("FAILED...", error);
+                });
+
+        } else {
+            alert("Veuillez remplir tous les champs.");
+        }
+    });
+});
