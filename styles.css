@@ -19,12 +19,12 @@
     /* Header and Text */
     h1 {
         font-size: 2.2rem;
-        color: #F9FAFB !important; /* Light text color */
+        color: black !important; /* Light text color */
     }
 
     h3 {
         font-size: 1.4rem;
-        color: #F9FAFB !important; /* Light text color */
+        color: black !important; /* Light text color */
     }
 
     /* Contact Form */
