@@ -164,6 +164,15 @@
             });
           
         });
+function showPercentage(title, percentage) {
+    // Set the title and percentage in the corresponding HTML elements
+    document.getElementById('percentageTitle').textContent = title;
+    document.getElementById('percentageValue').textContent = percentage;
+
+    // Make the percentage result section visible
+    document.getElementById('percentageResult').style.display = 'block';
+}
+
     </script>
 </body>
 
