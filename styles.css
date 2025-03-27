@@ -1,4 +1,5 @@
 /* Global Styles */
+<link rel="stylesheet" href="css/styles.css">
 
 body {
     font-family: 'Arial', sans-serif;
@@ -128,7 +129,6 @@ button:hover {
     background-color: #fff;
     border-radius: 8px;
 }
-
 
 .modal-header {
     background-color: #8B0000;
