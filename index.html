@@ -156,21 +156,26 @@
     </div>
 </div>
   <script>
-    function showPercentage(title, value) {
-        document.getElementById("percentageTitle").innerText = title;
-        document.getElementById("percentageValue").innerText = value;
-        document.getElementById("percentageResult").style.display = "block";
+ function showPercentage(name, percentage) {
+    const percentageTitle = document.getElementById('percentageTitle');
+    const percentageValue = document.getElementById('percentageValue');
+    const percentageResult = document.getElementById('percentageResult');
+
+    if (percentageTitle && percentageValue && percentageResult) {
+        percentageTitle.innerHTML = name;
+        percentageValue.innerHTML = `Taux: ${percentage}`;
+
+        // Effet d'animation
+        percentageResult.style.opacity = "0";
+        percentageResult.style.transform = "translateY(-10px)";
+        percentageResult.style.display = "block";
+
+        setTimeout(() => {
+            percentageResult.style.opacity = "1";
+            percentageResult.style.transform = "translateY(0)";
+        }, 200);
     }
-</script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.querySelectorAll('a[data-bs-toggle="modal"]').forEach(link => {
-            link.addEventListener('click', function () {
-                const videoUrl = this.getAttribute('data-video');
-                document.getElementById('videoPlayer').setAttribute('src', videoUrl);
-            });
-          
-        });
+}
     </script>
     <script>
 
