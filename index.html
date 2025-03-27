@@ -34,8 +34,7 @@
             height: auto;
         }
     </style>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -105,8 +104,7 @@
 
     <section id="accueil" class="container mt-4 text-center text-animation">
         <h1>Department Amélioration Contenu WKW</h1>
-<h3>test
-</p>
+        <h3>test</h3>
         <div class="center-image">
             <img src="https://media.licdn.com/dms/image/v2/C510BAQFv4NwvhYRq8Q/company-logo_200_200/company-logo_200_200/0/1631351838133?e=2147483647&v=beta&t=pE5-TQRX2fd9oIfzQypoBLterLoj-X4wOnC3C8MMI4Q" alt="WKW Group Logo">
         </div>
@@ -133,48 +131,69 @@
         </div>
     </div>
 
-  <div class="container mt-4">
-    <div class="collapse" id="contactSection">
-        <div class="contact-form">
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Nom:</label>
-                    <input type="text" id="name" name="name" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="comment">Commentaire:</label>
-                    <textarea id="comment" name="comment" class="form-control" rows="4" required></textarea>
-                </div>
-                <button type="button" class="btn btn-primary mt-3" id="sendButton">Envoyer</button>
-            </form>
+    <div class="container mt-4">
+        <div class="collapse" id="contactSection">
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nom:</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Envoyer</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+
+    <script>
+        function showPercentage(title, percentage) {
+            document.getElementById('percentageTitle').innerText = title;
+            document.getElementById('percentageValue').innerText = percentage;
+            document.getElementById('percentageResult').style.display = 'block';
+        }
+
+        document.querySelectorAll('[data-bs-toggle="modal"]').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                var videoSrc = e.target.getAttribute('data-video');
+                var modal = document.getElementById('videoModal');
+                var iframe = document.getElementById('videoPlayer');
+                iframe.src = videoSrc;
+            });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var formData = new FormData(e.target);
+            var contactData = {
+                service_id: 'service_id',
+                template_id: 'template_id',
+                user_id: 'user_id',
+                template_params: {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    message: formData.get('message')
+                }
+            };
+
+            emailjs.send(contactData.service_id, contactData.template_id, contactData.template_params, contactData.user_id)
+                .then(function (response) {
+                    alert('Message envoyé avec succès!');
+                    e.target.reset();
+                }, function (error) {
+                    alert('Erreur lors de l\'envoi du message: ' + error.text);
+                });
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.querySelectorAll('a[data-bs-toggle="modal"]').forEach(link => {
-            link.addEventListener('click', function () {
-                const videoUrl = this.getAttribute('data-video');
-                document.getElementById('videoPlayer').setAttribute('src', videoUrl);
-            });
-          
-        });
-function showPercentage(title, percentage) {
-    // Set the title and percentage in the corresponding HTML elements
-    document.getElementById('percentageTitle').textContent = title;
-    document.getElementById('percentageValue').textContent = percentage;
-
-    // Make the percentage result section visible
-    document.getElementById('percentageResult').style.display = 'block';
-}
-
-    </script>
-<script src="script.js" defer></script></body>
+</body>
 
 </html>
-
