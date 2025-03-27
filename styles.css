@@ -1,118 +1,175 @@
-/* Mobile Styling */
-@media (max-width: 768px) {
-    /* Navbar */
-    nav {
-        background: #B91D1D !important; /* Blood red background for mobile */
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #8B0000; /* Red blood color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-size: 1.8rem;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    padding: 10px 15px;
+    font-size: 1.1rem;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #a52a2a; /* Darker red when hovering */
+    border-radius: 5px;
+}
+
+.navbar-nav .nav-link:focus {
+    background-color: #a52a2a; /* Darker red when focused */
+}
+
+/* Text Animation */
+.text-animation {
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Main Section Styling */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#accueil {
+    color: black;
+    padding: 50px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#accueil h1 {
+  font-family:Arial, sans-serif;
+    font-size: 2.8rem;
+    color : red;
+    margin-bottom: 15px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+#accueil h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.center-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Buttons */
+button {
+    background-color: #8B0000; /* Red blood color */
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #a52a2a; /* Darker red when hovering */
+}
+
+/* Form Styling */
+.contact-form {
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-label {
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.contact-form .form-control {
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 14px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.contact-form .form-control:focus {
+    border-color: #8B0000; /* Red blood color */
+    box-shadow: 0 0 0 0.2rem rgba(139, 0, 0, 0.25); /* Red glow effect */
+}
+
+/* Modal Styling */
+.modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.modal-header {
+    background-color: #8B0000;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .navbar-nav {
+        text-align: center;
     }
 
     .navbar-nav .nav-link {
-        color: #F9FAFB !important; /* Light text for mobile */
-        font-size: 1.2rem;
+        padding: 12px;
+        font-size: 1rem;
     }
 
-    .navbar-nav .nav-link:hover {
-        color: #F9A8D4 !important; /* Pinkish hover effect */
-        background-color: #9B1111 !important;
-        border-radius: 5px;
+    section {
+        padding: 20px 10px;
     }
 
-    /* Header and Text */
-    h1 {
+    #accueil {
+        padding: 30px 10px;
+    }
+
+    #accueil h1 {
         font-size: 2.2rem;
-        color: #F9FAFB !important; /* Light text color */
     }
 
-    h3 {
-        font-size: 1.4rem;
-        color: #F9FAFB !important; /* Light text color */
-    }
-
-    /* Contact Form */
     .contact-form {
-        background: #2D3748 !important; /* Dark form background */
         padding: 20px;
     }
 
-    .contact-form label {
-        color: #F9FAFB !important; /* Light label color */
-    }
-
     .contact-form .form-control {
-        background-color: #1A202C !important; /* Dark input field background */
-        color: #F9FAFB !important; /* Light text inside inputs */
-        border: 1px solid #9B1111 !important; /* Red border */
+        font-size: 1rem;
     }
 
-    .contact-form .form-control:focus {
-        border-color: #F9A8D4 !important; /* Light pink glow */
-    }
-
-    .contact-form button {
-        background-color: #B91D1D !important; /* Blood red button */
-        color: #F9FAFB !important;
-        font-weight: bold;
-        border-radius: 5px;
-        padding: 12px 24px;
-        border: none;
-    }
-
-    .contact-form button:hover {
-        background-color: #9B1111 !important; /* Darker red on hover */
-        cursor: pointer;
-    }
-
-    /* Table Styling */
-    table th, table td {
-        color: #F9FAFB !important; /* Light text color */
-        padding: 10px;
-    }
-
-    /* Footer */
-    footer {
-        background-color: #1C1C1C !important;
-        color: #F9FAFB !important;
-        padding: 15px;
-    }
-
-    footer a {
-        color: #F9A8D4 !important; /* Light pink for footer links */
-    }
-
-    footer a:hover {
-        color: #F9A8D4 !important;
-    }
-}
-
-/* Larger Screens (tablets and up) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    h1 {
-        font-size: 2.4rem;
-    }
-
-    h3 {
-        font-size: 1.6rem;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 1.2rem;
-    }
-
-    .contact-form {
-        padding: 25px;
-    }
-}
-
-/* For very large screens (desktops and up) */
-@media (min-width: 1025px) {
-    h1 {
-        font-size: 3rem;
-    }
-
-    h3 {
-        font-size: 1.8rem;
-    }
-
-    .contact-form {
-        padding: 40px;
+    button {
+        font-size: 1rem;
     }
 }
