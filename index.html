@@ -178,6 +178,14 @@
 }
     </script>
     <script>
+        document.querySelectorAll('a[data-bs-toggle="modal"]').forEach(link => {
+            link.addEventListener('click', function () {
+                const videoUrl = this.getAttribute('data-video');
+                document.getElementById('videoPlayer').setAttribute('src', videoUrl);
+            });
+          
+        });
+    </script>
 
 
 
