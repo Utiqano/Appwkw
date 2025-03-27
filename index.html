@@ -155,28 +155,7 @@
         </div>
     </div>
 </div>
-  <script>
- function showPercentage(name, percentage) {
-    const percentageTitle = document.getElementById('percentageTitle');
-    const percentageValue = document.getElementById('percentageValue');
-    const percentageResult = document.getElementById('percentageResult');
 
-    if (percentageTitle && percentageValue && percentageResult) {
-        percentageTitle.innerHTML = name;
-        percentageValue.innerHTML = `Taux: ${percentage}`;
-
-        // Effet d'animation
-        percentageResult.style.opacity = "0";
-        percentageResult.style.transform = "translateY(-10px)";
-        percentageResult.style.display = "block";
-
-        setTimeout(() => {
-            percentageResult.style.opacity = "1";
-            percentageResult.style.transform = "translateY(0)";
-        }, 200);
-    }
-}
-    </script>
     <script>
         document.querySelectorAll('a[data-bs-toggle="modal"]').forEach(link => {
             link.addEventListener('click', function () {
